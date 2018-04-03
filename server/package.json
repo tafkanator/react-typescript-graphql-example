@@ -1,0 +1,24 @@
+{
+	"name": "server",
+	"version": "1.0.0",
+	"description": "",
+	"main": "build/server.js",
+	"scripts": {
+		"start": "run-p watch serve:dev",
+		"serve:dev": "node-dev --no-notify --inspect=5858 build/server.js",
+		"serve:production": "node build/server.js",
+		"build": "tsc -p tsconfig.json",
+		"watch": "yarn build --watch"
+	},
+	"dependencies": {
+		"apollo-server-koa": "^1.3.3",
+		"graphql": "^0.13.2",
+		"graphql-tools": "^2.23.1",
+		"koa": "^2.5.0",
+		"koa-bodyparser": "^4.2.0",
+		"koa-router": "^7.4.0",
+		"node-dev": "^3.1.3",
+		"npm-run-all": "^4.1.2",
+		"typescript": "^2.7.2"
+	}
+}
