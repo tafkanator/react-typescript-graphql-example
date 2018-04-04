@@ -4,8 +4,8 @@ import * as koaBody from 'koa-bodyparser';
 import { graphqlKoa, graphiqlKoa } from 'apollo-server-koa';
 import { makeExecutableSchema } from 'graphql-tools';
 import { schemas, resolvers } from './api';
-import getTypeDefs from './services/getTypeDefs';
-import getResolvers from './services/getResolvers';
+import mergeTypeDefs from './services/mergeTypeDefs';
+import mergeResolvers from './services/mergeResolvers';
 
 const options = {
 	port: 3000,
@@ -17,8 +17,9 @@ const app = new koa();
 const router = new koaRouter();
 
 const schema = makeExecutableSchema({
-	typeDefs: getTypeDefs(schemas),
-	resolvers: getResolvers(resolvers),
+	typeDefs: mergeTypeDefs(schemas),
+	resolvers: mergeResolvers(resolvers),
+
 });
 
 router.post(options.endpointUrl, koaBody(), graphqlKoa({ schema }));
