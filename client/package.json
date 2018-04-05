@@ -4,7 +4,10 @@
 	"private": true,
 	"dependencies": {
 		"apollo-boost": "0.1.4",
-		"graphql": "0.13.2",
+		"apollo-codegen": "0.19.1",
+		"graphql": "0.12.3",
+		"npm-run-all": "4.1.2",
+		"onchange": "3.3.0",
 		"react": "^16.3.1",
 		"react-apollo": "2.1.2",
 		"react-dom": "^16.3.1",
@@ -13,8 +16,13 @@
 		"tslint-config-prettier": "1.10.0"
 	},
 	"scripts": {
-		"start": "react-scripts-ts start",
+		"start": "run-p typings:watch start:dev-server",
+		"start:dev-server": "react-scripts-ts start",
 		"build": "react-scripts-ts build",
+		"typings:watch": "onchange \"./src/**/*.tsx\" -e \"./src/generated/*.*\" -w -i -- yarn typings:update",
+		"typings:update": "yarn typings:make-schema && yarn typings:make-ts-types",
+		"typings:make-schema": "apollo-codegen introspect-schema http://localhost:3001/graphql --output src/generated/schema.json",
+		"typings:make-ts-types": "apollo-codegen generate src/**/*.tsx --schema src/generated/schema.json --target typescript --output src/generated/schema-types.ts",
 		"test": "react-scripts-ts test --env=jsdom"
 	},
 	"devDependencies": {
@@ -25,5 +33,6 @@
 		"@types/react-dom": "16.0.4",
 		"@types/react-router-dom": "4.2.6",
 		"typescript": "2.8.1"
-	}
+	},
+	"proxy": "http://localhost:3001"
 }

@@ -12,12 +12,14 @@ export interface Article {
 // generate sample data
 const data = [...Array(20)].map((_, i) => {
 	const imgId = casual.integer(1, 1080);
+	const content = casual.sentences();
 
 	return {
 		id: i,
-		content: casual.text,
-		thumb: `https://picsum.photos/200/300?image=${imgId}`,
-		img: `https://picsum.photos/1024/768?image=${imgId}`,
+		excerpt: content.length > 50 ? `${content.substr(0, 50)}...` : content,
+		content,
+		thumb: `https://picsum.photos/200/200?image=${imgId}`,
+		cover: `https://picsum.photos/1024/768?image=${imgId}`,
 		title: casual.title,
 		authorId: casual.integer(0, 4),
 	};

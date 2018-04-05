@@ -4,8 +4,10 @@ export default gql`
 	type Article {
 		id: ID!
 		title: String!
-		thumb: String
+		thumb: String!
+		cover: String!
 		content: String
+		excerpt: String!
 		author: Author!
 	}
 

@@ -1,4 +1,5 @@
 import * as koa from 'koa';
+import * as cors from 'kcors';
 import * as koaRouter from 'koa-router';
 import * as koaBody from 'koa-bodyparser';
 import { graphqlKoa, graphiqlKoa } from 'apollo-server-koa';
@@ -9,11 +10,13 @@ import mergeResolvers from './services/mergeResolvers';
 
 const options = {
 	port: 3001,
-	endpointUrl: '/',
+	endpointUrl: '/graphql',
 	useGraphiql: true,
 };
 
 const app = new koa();
+app.use(cors());
+
 const router = new koaRouter();
 
 const schema = makeExecutableSchema({
@@ -27,7 +30,6 @@ router.get(options.endpointUrl, graphqlKoa({ schema }));
 if (options.useGraphiql) {
 	router.get('/graphiql', graphiqlKoa({ endpointURL: options.endpointUrl }));
 }
-
 app.use(router.routes());
 app.use(router.allowedMethods());
 app.listen(options.port);
