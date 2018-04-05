@@ -1,10 +1,9 @@
 .article-view__title {
-	background: #41434a;
-	color: #eee;
-	padding: 50px 20px;
-	text-align: center;
+	/* text-align: center; */
 	font-size: 40px;
 	font-weight: normal;
+	text-transform: uppercase;
+	font-weight: 300;
 }
 
 @media (min-width: 600px) {
@@ -26,4 +25,12 @@
 		float: left;
 		margin-right: 20px;
 	}
+}
+
+.article-view__footer-link {
+	clear: both;
+	display: block;
+	padding-top: 10px;
+	text-decoration: none;
+	border-top: 1px solid #6e9489;
 }
