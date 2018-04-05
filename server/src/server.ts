@@ -8,7 +8,7 @@ import mergeTypeDefs from './services/mergeTypeDefs';
 import mergeResolvers from './services/mergeResolvers';
 
 const options = {
-	port: 3000,
+	port: 3001,
 	endpointUrl: '/',
 	useGraphiql: true,
 };

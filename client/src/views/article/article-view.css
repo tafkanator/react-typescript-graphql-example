@@ -1,0 +1,29 @@
+.article-view__title {
+	background: #41434a;
+	color: #eee;
+	padding: 50px 20px;
+	text-align: center;
+	font-size: 40px;
+	font-weight: normal;
+}
+
+@media (min-width: 600px) {
+	.article-view__title {
+		font-size: 80px;
+	}
+}
+
+.article-view__thumb {
+	display: block;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+@media (min-width: 600px) {
+	.article-view__thumb {
+		width: 50%;
+		max-width: 800px;
+		float: left;
+		margin-right: 20px;
+	}
+}

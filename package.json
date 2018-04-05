@@ -3,20 +3,21 @@
 	"version": "1.0.0",
 	"description": "Example app (server and client) for using react, typescript and graphql together",
 	"scripts": {
-		"start": "yarn build:dev-server && run-p start:dev-server",
-		"start:dev-server": "cd server && yarn start",
-		"build": "run-p build:dev-server",
-		"build:dev-server": "cd server && yarn build"
+		"start": "yarn build:server && run-p -l start:server start:client",
+		"start:server": "cd server && yarn start",
+		"start:client": "cd client && yarn start",
+		"build": "run-p build:server build:server",
+		"build:server": "cd server && yarn build",
+		"build:client": "cd client && yarn build",
+		"install": "run-p install:server install:client",
+		"install:server": "cd server && yarn install",
+		"install:client": "cd server && yarn install"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/tafkanator/react-typescrip-graphql-example.git"
 	},
-	"keywords": [
-		"react",
-		"typescript",
-		"graphgql"
-	],
+	"keywords": ["react", "typescript", "graphgql"],
 	"author": "Taavi Sangel",
 	"license": "MIT",
 	"homepage": "https://github.com/tafkanator/react-typescrip-graphql-example#readme",
