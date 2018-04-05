@@ -20,11 +20,11 @@ const HOME_VIEW_QUERY = gql`
 	}
 `;
 
-class HomeViewData extends Query<HomeViewQuery> {}
+class ViewQuery extends Query<HomeViewQuery> {}
 
 export default () => (
 	<div className="view home-view">
-		<HomeViewData query={HOME_VIEW_QUERY}>
+		<ViewQuery query={HOME_VIEW_QUERY}>
 			{({ loading, error, data }) =>
 				data && data.articleList ? (
 					data.articleList.map(article => (
@@ -36,7 +36,7 @@ export default () => (
 							<h2 className="home-view__article__title">{article.title}</h2>
 							<p className="home-view__article__content">{article.excerpt}</p>
 
-							<Link to="/article/1" className="home-view__article__link">
+							<Link to={`/article/${article.id}`} className="home-view__article__link">
 								Read more
 							</Link>
 						</article>
@@ -45,6 +45,6 @@ export default () => (
 					<p>Loading...</p>
 				)
 			}
-		</HomeViewData>
+		</ViewQuery>
 	</div>
 );

@@ -7,7 +7,7 @@ export default {
 	},
 
 	Query: {
-		article: (_: any, { id }: any) => articleDb.findById(id),
+		article: (_: any, { id }: any) => articleDb.findById(parseInt(id)),
 		articleList: articleDb.findAll,
 	},
 };
