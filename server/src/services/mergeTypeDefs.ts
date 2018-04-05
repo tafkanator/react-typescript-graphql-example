@@ -1,5 +1,6 @@
 import gql from 'graphql-tag';
 import { DocumentNode } from 'graphql';
+// import {mer} from 'graphql-tools'
 
 export default function mergeTypeDefs(schemaParts: DocumentNode[]) {
 	const typesTofind = ['Query', 'Mutation', 'Subscription'];

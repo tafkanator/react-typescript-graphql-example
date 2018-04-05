@@ -1,5 +1,13 @@
-import * as article from './article';
+// article
+import articleSchema from './article/article-schema';
+import articleResolver from './article/article-resolver';
 
-export const schemas = [article.schema];
+// author
+import authorSchema from './author/author-schema';
+import authorResolver from './author/author-resolver';
 
-export const resolvers = [article.resolver];
+// schemas
+export const schemas = [articleSchema, authorSchema];
+
+// resolvers
+export const resolvers = [articleResolver, authorResolver];
