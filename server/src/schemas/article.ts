@@ -1,4 +1,5 @@
 import gql from 'graphql-tag';
+import articleDb from '../db/article';
 
 export const schema = gql`
 	type Article {
@@ -6,6 +7,7 @@ export const schema = gql`
 		title: String!
 		thumb: String
 		content: String
+		author: Author!
 	}
 
 	extend type Query {
@@ -16,8 +18,7 @@ export const schema = gql`
 
 export const resolver = {
 	Query: {
-		article: () => ({
-			id: 1,
-		}),
+		article: (_: any, { id }: any) => articleDb.findById(id),
+		articleList: articleDb.findAll,
 	},
 };

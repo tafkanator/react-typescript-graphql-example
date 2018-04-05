@@ -3,7 +3,7 @@ import * as koaRouter from 'koa-router';
 import * as koaBody from 'koa-bodyparser';
 import { graphqlKoa, graphiqlKoa } from 'apollo-server-koa';
 import { makeExecutableSchema } from 'graphql-tools';
-import { schemas, resolvers } from './api';
+import { schemas, resolvers } from './schemas';
 import mergeTypeDefs from './services/mergeTypeDefs';
 import mergeResolvers from './services/mergeResolvers';
 
@@ -19,7 +19,6 @@ const router = new koaRouter();
 const schema = makeExecutableSchema({
 	typeDefs: mergeTypeDefs(schemas),
 	resolvers: mergeResolvers(resolvers),
-
 });
 
 router.post(options.endpointUrl, koaBody(), graphqlKoa({ schema }));
