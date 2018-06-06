@@ -1,13 +1,13 @@
-import articleDb, { Article } from '../../db/article';
-import authorDb from '../../db/author';
+import AuthorEntity from 'entities/AuthorEntity';
+import ArticleEntity from 'entities/ArticleEntity';
 
 export default {
 	Article: {
-		author: ({ authorId }: Article) => authorDb.findById(authorId),
+		author: ({ authorId }: any) => AuthorEntity.findOne(authorId),
 	},
 
 	Query: {
-		article: (_: any, { id }: any) => articleDb.findById(parseInt(id)),
-		articleList: articleDb.findAll,
+		article: (_: any, { id }: any) => ArticleEntity.findOne(parseInt(id)),
+		articleList: ArticleEntity.find,
 	},
 };

@@ -17,6 +17,8 @@
 		"strictNullChecks": true,
 		"strictFunctionTypes": true,
 		"strictPropertyInitialization": true,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
 		"typeRoots": ["./node_modules/@types", "./typings"]
 	}
 }

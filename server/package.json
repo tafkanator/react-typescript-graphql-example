@@ -4,15 +4,16 @@
 	"description": "",
 	"main": "build/server.js",
 	"scripts": {
-		"start": "run-p watch serve:dev",
-		"serve:dev": "node-dev --no-notify --inspect=5858 build/server.js",
-		"serve:production": "node build/server.js",
+		"start": "yarn build && run-p watch serve:dev",
+		"serve:dev": "node-dev --no-notify --inspect=5858 build/index.js",
+		"serve:production": "node build/index.js",
 		"build": "tsc -p tsconfig.json",
 		"watch": "yarn build --watch"
 	},
 	"dependencies": {
 		"@koa/cors": "2.2.1",
 		"@types/kcors": "2.2.3",
+		"@types/node": "^10.3.1",
 		"apollo-server-koa": "^1.3.3",
 		"casual": "^1.5.19",
 		"graphql": "^0.13.2",
@@ -23,6 +24,9 @@
 		"koa-router": "^7.4.0",
 		"node-dev": "^3.1.3",
 		"npm-run-all": "^4.1.2",
-		"typescript": "^2.8.3"
+		"reflect-metadata": "^0.1.12",
+		"sqlite3": "^4.0.0",
+		"typeorm": "^0.2.7",
+		"typescript": "^2.9.1"
 	}
 }
