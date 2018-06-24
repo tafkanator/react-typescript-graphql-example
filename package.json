@@ -8,14 +8,12 @@
 		"server"
 	],
 	"scripts": {
-		"start": "yarn build:server && run-p -l start:server start:client",
-		"start:server": "cd server && yarn start",
-		"start:client": "cd client && yarn start",
-		"build": "run-p build:server build:server",
-		"build:server": "cd server && yarn build",
-		"build:client": "cd client && yarn build",
-		"install:server": "cd server && yarn install",
-		"install:client": "cd server && yarn install"
+		"start": "run-p -l start:server start:client",
+		"start:server": "yarn workspace server start",
+		"start:client": "yarn workspace client start",
+		"build": "run-p build:client build:server",
+		"build:server": "yarn workspace server build",
+		"build:client": "yarn workspace client build"
 	},
 	"repository": {
 		"type": "git",
@@ -30,16 +28,6 @@
 	"license": "MIT",
 	"homepage": "https://github.com/tafkanator/react-typescrip-graphql-example#readme",
 	"dependencies": {
-		"@types/deepmerge": "^2.1.0",
-		"@types/glob": "^5.0.35",
-		"@types/koa": "^2.0.44",
-		"@types/koa-bodyparser": "^4.2.0",
-		"@types/koa-router": "^7.0.27",
-		"deepmerge": "^2.1.0",
-		"glob": "^7.1.2",
-		"graphql": "^0.13.2",
-		"graphql-tag": "^2.8.0",
-		"graphql-yoga": "^1.7.0",
 		"npm-run-all": "^4.1.2",
 		"prettier": "^1.13.4"
 	}

@@ -1,5 +1,5 @@
-import AuthorEntity from 'entities/AuthorEntity';
-import ArticleEntity from 'entities/ArticleEntity';
+import AuthorEntity from '../../entities/AuthorEntity';
+import ArticleEntity from '../../entities/ArticleEntity';
 
 export default {
 	Article: {
