@@ -1,4 +1,4 @@
-import { Resolver, Query, Arg, Int, Mutation } from 'type-graphql';
+import { Resolver, Query, Arg, ID, Mutation } from 'type-graphql';
 import { UserInputError } from 'apollo-server';
 import AddArticleInputType from './types/AddArticleInputType';
 import ArticleEntity from '../entities/ArticleEntity';
@@ -8,7 +8,7 @@ import AuthorEntity from '../entities/AuthorEntity';
 export default class ArticleResolver {
 	@Query(() => ArticleEntity, { nullable: true, description: 'Returns artilcle by id' })
 	async article(
-		@Arg('id', () => Int)
+		@Arg('id', () => ID)
 		id: number,
 	): Promise<ArticleEntity | undefined> {
 		return ArticleEntity.findOne(id);

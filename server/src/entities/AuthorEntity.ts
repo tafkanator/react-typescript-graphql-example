@@ -17,9 +17,3 @@ export default class AuthorEntity extends BaseEntity {
 	@OneToMany(() => ArticleEntity, article => article.author, { lazy: true })
 	articles!: Promise<ArticleEntity[]> | ArticleEntity[];
 }
-
-// // generate sample data
-// const data: Author[] = [...Array(5)].map((_, i) => ({
-// 	id: i,
-// 	name: casual.full_name,
-// }));
