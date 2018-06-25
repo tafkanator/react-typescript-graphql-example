@@ -1,13 +1,13 @@
-import { Resolver, Query, Arg, ID, Mutation } from 'type-graphql';
 import { UserInputError } from 'apollo-server';
-import AddArticleInputType from './types/AddArticleInputType';
+import { Arg, ID, Mutation, Query, Resolver } from 'type-graphql';
 import ArticleEntity from '../entities/ArticleEntity';
 import AuthorEntity from '../entities/AuthorEntity';
+import AddArticleInputType from './types/AddArticleInputType';
 
 @Resolver()
 export default class ArticleResolver {
 	@Query(() => ArticleEntity, { nullable: true, description: 'Returns article by id' })
-	async article(
+	public async article(
 		@Arg('id', () => ID)
 		id: number,
 	): Promise<ArticleEntity | undefined> {
@@ -15,12 +15,12 @@ export default class ArticleResolver {
 	}
 
 	@Query(() => [ArticleEntity], { description: 'Returns all articles' })
-	async articleList(): Promise<ArticleEntity[]> {
+	public async articleList(): Promise<ArticleEntity[]> {
 		return ArticleEntity.find();
 	}
 
 	@Mutation(() => ArticleEntity, { description: 'Create new article' })
-	async createArticle(@Arg('input') input: AddArticleInputType): Promise<ArticleEntity> {
+	public async createArticle(@Arg('input') input: AddArticleInputType): Promise<ArticleEntity> {
 		const { authorId, ...articleFields } = input;
 		const author = await AuthorEntity.findOne(authorId);
 

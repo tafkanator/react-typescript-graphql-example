@@ -1,5 +1,5 @@
-import { BaseEntity, PrimaryGeneratedColumn, Column, Entity, OneToMany } from 'typeorm';
-import { ObjectType, Field, ID } from 'type-graphql';
+import { Field, ID, ObjectType } from 'type-graphql';
+import { BaseEntity, Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import ArticleEntity from './ArticleEntity';
 
 @Entity('authors')
@@ -15,5 +15,5 @@ export default class AuthorEntity extends BaseEntity {
 
 	@Field(() => [ArticleEntity])
 	@OneToMany(() => ArticleEntity, article => article.author, { lazy: true })
-	articles!: Promise<ArticleEntity[]> | ArticleEntity[];
+	public articles!: Promise<ArticleEntity[]> | ArticleEntity[];
 }

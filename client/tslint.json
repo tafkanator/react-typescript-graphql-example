@@ -1,8 +1,9 @@
 {
-	"extends": ["tslint-react", "tslint:recommended", "tslint-config-prettier"],
-	"defaultSeverity": "warning",
+	"extends": ["../tslint.json", "tslint-react"],
 	"rules": {
 		"ordered-imports": false,
-		"jsx-boolean-value": false
+		"jsx-boolean-value": false,
+		"jsx-no-multiline-js": false,
+		"jsx-curly-spacing": false
 	}
 }

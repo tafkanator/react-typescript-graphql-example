@@ -1,6 +1,6 @@
-import path from 'path';
-import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
+import express from 'express';
+import path from 'path';
 import { buildSchema } from 'type-graphql';
 
 export default async function createGraphqlServer(app: express.Express) {

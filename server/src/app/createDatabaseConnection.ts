@@ -3,11 +3,11 @@ import { createConnection } from 'typeorm';
 
 export default async function createDatabaseConnection() {
 	return createConnection({
-		type: 'sqlite',
 		database: 'database.sqlite',
-		synchronize: true,
-		logging: process.env.NODE_ENV === 'development',
 		entities: [path.resolve(__dirname, '..', 'entities', '*.ts')],
+		logging: process.env.NODE_ENV === 'development',
+		synchronize: true,
+		type: 'sqlite',
 	}).catch(e => {
 		throw new Error(e);
 	});
