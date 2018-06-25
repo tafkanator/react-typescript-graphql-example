@@ -1,36 +1,13 @@
-import { ApolloServer, gql } from 'apollo-server-express';
+import path from 'path';
 import express from 'express';
-
-const books = [
-	{
-		title: 'Harry Potter and the Chamber of Secrets',
-		author: 'J.K. Rowling',
-	},
-	{
-		title: 'Jurassic Park',
-		authPor: 'Michael Crichton',
-	},
-];
-
-const typeDefs = gql`
-	type Book {
-		title: String
-		author: String
-	}
-
-	type Query {
-		books: [Book]
-	}
-`;
-
-const resolvers = {
-	Query: {
-		books: () => books,
-	},
-};
+import { ApolloServer } from 'apollo-server-express';
+import { buildSchema } from 'type-graphql';
 
 export default async function createGraphqlServer(app: express.Express) {
-	const server = new ApolloServer({ typeDefs, resolvers });
+	const schema = await buildSchema({
+		resolvers: [path.join(__dirname, '..', 'entities', '*.ts'), path.join(__dirname, '..', 'resolvers', '*.ts')],
+	});
+	const server = new ApolloServer({ schema });
 
 	server.applyMiddleware({ app });
 

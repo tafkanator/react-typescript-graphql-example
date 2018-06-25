@@ -1,16 +1,31 @@
-import { BaseEntity, PrimaryGeneratedColumn, Column, Entity } from 'typeorm';
+import { BaseEntity, PrimaryGeneratedColumn, Column, Entity, ManyToOne } from 'typeorm';
+import { Field, ObjectType, ID } from 'type-graphql';
+import AuthorEntity from './AuthorEntity';
 
 @Entity('articles')
+@ObjectType('Article')
 export default class ArticleEntity extends BaseEntity {
-	@PrimaryGeneratedColumn() public id!: number;
+	@Field(() => ID)
+	@PrimaryGeneratedColumn()
+	public id!: number;
 
-	@Column() public title!: string;
+	@Field()
+	@Column()
+	public title!: string;
 
-	@Column() public thumb!: string;
+	@Field()
+	@Column()
+	public thumb!: string;
 
-	@Column() public content!: string;
+	@Field()
+	@Column()
+	public content!: string;
 
-	@Column() public authorId!: number;
+	@Field(() => AuthorEntity)
+	@ManyToOne(() => AuthorEntity, { lazy: true })
+	author!: Promise<AuthorEntity> | AuthorEntity;
+
+	// @Column() public authorId!: number;
 }
 
 // generate sample data
