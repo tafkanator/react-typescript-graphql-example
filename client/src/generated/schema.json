@@ -16,7 +16,7 @@
           "fields": [
             {
               "name": "article",
-              "description": "Returns artilcle by id",
+              "description": "Returns article by id",
               "args": [
                 {
                   "name": "id",

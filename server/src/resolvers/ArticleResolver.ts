@@ -6,7 +6,7 @@ import AuthorEntity from '../entities/AuthorEntity';
 
 @Resolver()
 export default class ArticleResolver {
-	@Query(() => ArticleEntity, { nullable: true, description: 'Returns artilcle by id' })
+	@Query(() => ArticleEntity, { nullable: true, description: 'Returns article by id' })
 	async article(
 		@Arg('id', () => ID)
 		id: number,

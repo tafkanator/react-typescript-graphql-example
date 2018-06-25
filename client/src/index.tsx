@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 import RootView from './views/RootView';
-import registerServiceWorker from './registerServiceWorker';
+// import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
 // Pass your GraphQL endpoint to uri
@@ -18,4 +18,4 @@ ReactDOM.render(
 	</ApolloProvider>,
 	document.getElementById('root') as HTMLElement,
 );
-registerServiceWorker();
+// registerServiceWorker();
