@@ -8,6 +8,7 @@
 		"pretty": true,
 		"forceConsistentCasingInFileNames": true,
 		"noImplicitReturns": true,
-		"noUnusedLocals": true
+		"noUnusedLocals": true,
+		"typeRoots": ["node_modules/@types", "typings"]
 	}
 }

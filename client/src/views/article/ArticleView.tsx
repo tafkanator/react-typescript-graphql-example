@@ -34,10 +34,8 @@ export default (props: IProps) => (
 					<div className="view">
 						<h2 className="article-view__title">{data.article.title}</h2>
 						<img className="article-view__thumb" src={data.article.cover} alt={data.article.title} />
-
 						<p className="article-view__content">{data.article.content}</p>
 						<p className="article-view__prefix">{data.article.author.name}</p>
-
 						<Link to="/" className="article-view__footer-link">
 							Back to list view
 						</Link>

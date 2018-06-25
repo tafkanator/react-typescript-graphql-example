@@ -18,7 +18,7 @@
 		"typings:watch": "onchange \"./src/**/*.tsx\" -e \"./src/generated/*.*\" -w -i -- yarn typings:update",
 		"typings:update": "yarn typings:make-schema && yarn typings:make-ts-types",
 		"typings:make-schema": "apollo-codegen introspect-schema http://localhost:4000/graphql --output src/generated/schema.json",
-		"typings:make-ts-types": "apollo-codegen generate src/**/*.tsx --schema src/generated/schema.json --target typescript --output src/generated/schema-types.ts --add-typename",
+		"typings:make-ts-types": "apollo-codegen generate src/**/*.{tsx,graphql} --schema src/generated/schema.json --target typescript --output src/generated/schema-types.ts --add-typename",
 		"test": "react-scripts-ts test --env=jsdom"
 	},
 	"devDependencies": {
@@ -30,6 +30,7 @@
 		"apollo-codegen": "^0.20.0",
 		"onchange": "^4.0.0",
 		"react-scripts-ts": "^2.16.0",
+		"ts-graphql-plugin": "^1.1.2",
 		"typescript": "^2.9.2"
 	},
 	"proxy": "http://localhost:4000"
