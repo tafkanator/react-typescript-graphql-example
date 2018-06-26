@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { Query } from 'react-apollo';
 import { gql } from 'apollo-boost';
-import { HomeViewQuery } from '../../generated/schema-types';
+import { HomeView } from '../../generated/schema-types';
 import './home-view.css';
 
 const HOME_VIEW_QUERY = gql`
@@ -20,7 +20,7 @@ const HOME_VIEW_QUERY = gql`
 	}
 `;
 
-class ViewQuery extends Query<HomeViewQuery> {}
+class ViewQuery extends Query<HomeView> {}
 
 export default () => (
 	<div className="view home-view">

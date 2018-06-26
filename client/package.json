@@ -3,17 +3,13 @@
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
-		"apollo-boost": "^0.1.6",
-		"apollo-codegen": "0.19.1",
-		"graphql": "0.12.3",
+		"apollo-boost": "^0.1.10",
+		"graphql": "^0.13.2",
 		"npm-run-all": "^4.1.3",
-		"onchange": "3.3.0",
-		"react": "^16.3.2",
-		"react-apollo": "^2.1.4",
-		"react-dom": "^16.3.2",
-		"react-router-dom": "4.2.2",
-		"react-scripts-ts": "^2.15.1",
-		"tslint-config-prettier": "^1.12.0"
+		"react": "^16.4.1",
+		"react-apollo": "^2.1.6",
+		"react-dom": "^16.4.1",
+		"react-router-dom": "^4.3.1"
 	},
 	"scripts": {
 		"start": "run-p typings:watch start:dev-server",
@@ -21,18 +17,21 @@
 		"build": "react-scripts-ts build",
 		"typings:watch": "onchange \"./src/**/*.tsx\" -e \"./src/generated/*.*\" -w -i -- yarn typings:update",
 		"typings:update": "yarn typings:make-schema && yarn typings:make-ts-types",
-		"typings:make-schema": "apollo-codegen introspect-schema http://localhost:3001/graphql --output src/generated/schema.json",
-		"typings:make-ts-types": "apollo-codegen generate src/**/*.tsx --schema src/generated/schema.json --target typescript --output src/generated/schema-types.ts",
+		"typings:make-schema": "apollo-codegen introspect-schema http://localhost:4000/graphql --output src/generated/schema.json",
+		"typings:make-ts-types": "apollo-codegen generate src/**/*.{tsx,graphql} --schema src/generated/schema.json --target typescript --output src/generated/schema-types.ts --add-typename",
 		"test": "react-scripts-ts test --env=jsdom"
 	},
 	"devDependencies": {
-		"@types/jest": "^22.2.3",
-		"@types/node": "^10.0.4",
+		"@types/jest": "^23.1.1",
 		"@types/prop-types": "15.5.2",
-		"@types/react": "^16.3.13",
-		"@types/react-dom": "^16.0.5",
-		"@types/react-router-dom": "4.2.6",
-		"typescript": "^2.8.3"
+		"@types/react": "^16.4.1",
+		"@types/react-dom": "^16.0.6",
+		"@types/react-router-dom": "^4.2.7",
+		"apollo-codegen": "^0.20.0",
+		"onchange": "^4.0.0",
+		"react-scripts-ts": "^2.16.0",
+		"ts-graphql-plugin": "^1.1.2",
+		"typescript": "^2.9.2"
 	},
-	"proxy": "http://localhost:3001"
+	"proxy": "http://localhost:4000"
 }

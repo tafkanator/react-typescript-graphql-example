@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { Query } from 'react-apollo';
 import { gql } from 'apollo-boost';
-import { ArticleViewQuery } from '../../generated/schema-types';
+import { ArticleView } from '../../generated/schema-types';
 import './article-view.css';
 
 interface IQueryProps {
@@ -24,7 +24,7 @@ const ARTICLE_VIEW_QUERY = gql`
 	}
 `;
 
-class ViewQuery extends Query<ArticleViewQuery, IQueryProps> {}
+class ViewQuery extends Query<ArticleView, IQueryProps> {}
 
 export default (props: IProps) => (
 	<article className="article-view">
@@ -34,10 +34,8 @@ export default (props: IProps) => (
 					<div className="view">
 						<h2 className="article-view__title">{data.article.title}</h2>
 						<img className="article-view__thumb" src={data.article.cover} alt={data.article.title} />
-
 						<p className="article-view__content">{data.article.content}</p>
 						<p className="article-view__prefix">{data.article.author.name}</p>
-
 						<Link to="/" className="article-view__footer-link">
 							Back to list view
 						</Link>

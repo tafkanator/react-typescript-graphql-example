@@ -1,0 +1,7 @@
+projects:
+  client:
+    schemaPath: client/src/generated/schema.json
+    includes: ["client/src/**/*.{tsx,graphql}"]
+    extensions:
+      endpoints:
+        default: http://localhost:4000/graphql

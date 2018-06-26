@@ -8,5 +8,13 @@
 	},
 	"files.associations": {
 		".gqlcinfig": "json5"
-	}
+	},
+	"typescript.tsdk": "node_modules\\typescript\\lib",
+	"cSpell.words": [
+		"codegen",
+		"graphgql",
+		"graphql",
+		"typeorm",
+		"workspaces"
+	]
 }

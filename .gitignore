@@ -7,6 +7,7 @@ yarn-error.log*
 
 # Server
 /server/build
+/server/database.sqlite
 
 # Runtime data
 pids
