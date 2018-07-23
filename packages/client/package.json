@@ -3,7 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"start": "parcel --port 3000 src/index.html"
+		"start": "node scripts/start.js"
 	},
 	"dependencies": {
 		"@types/react": "^16.4.6",
