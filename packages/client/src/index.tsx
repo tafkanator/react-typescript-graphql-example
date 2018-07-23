@@ -1,11 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from 'react-apollo';
+import RootView from './views/RootView';
+import './index.css';
 
-class HelloMessage extends React.Component<{ name: string }> {
-	render() {
-		return <div>Hello {this.props.name}</div>;
-	}
-}
+// Pass your GraphQL endpoint to uri
+const client = new ApolloClient({ uri: `http://localhost:4000` });
 
-var mountNode = document.getElementById('app');
-ReactDOM.render(<HelloMessage name="Johanna" />, mountNode);
+ReactDOM.render(
+	<ApolloProvider client={client}>
+		<BrowserRouter>
+			<RootView />
+		</BrowserRouter>
+	</ApolloProvider>,
+	document.getElementById('root') as HTMLElement,
+);

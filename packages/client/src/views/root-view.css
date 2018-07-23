@@ -1,0 +1,24 @@
+.root-view {
+	margin: 0 auto;
+}
+
+.view {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+.root-view__header {
+	margin: 20px;
+	border: 1px solid #6e9489;
+	text-align: center;
+	border-left: none;
+	border-right: none;
+}
+
+.root-view__header__link {
+	font-weight: bold;
+	font-size: 36px;
+	text-transform: uppercase;
+	text-decoration: none;
+}

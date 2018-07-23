@@ -9,7 +9,10 @@
 		"@types/react": "^16.4.6",
 		"@types/react-dom": "^16.0.6",
 		"@types/react-router-dom": "^4.3.0",
+		"apollo-boost": "^0.1.10",
+		"graphql": "^0.13.2",
 		"react": "^16.4.1",
+		"react-apollo": "^2.1.9",
 		"react-dom": "^16.4.1",
 		"react-router-dom": "^4.3.1"
 	},
