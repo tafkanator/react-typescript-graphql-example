@@ -1,7 +1,8 @@
 {
 	"recommendations": [
-		"kumar-harsh.graphql-for-vscode",
 		"eg2.tslint",
-		"esbenp.prettier-vscode"
+		"prisma.vscode-graphql",
+		"esbenp.prettier-vscode",
+		"streetsidesoftware.code-spell-checker"
 	]
 }
