@@ -4,8 +4,7 @@
 	"description": "Example app (server and client) for using react, typescript and graphql together",
 	"private": true,
 	"workspaces": [
-		"client",
-		"server"
+		"packages/*"
 	],
 	"scripts": {
 		"start": "run-p -l start:server start:client",
@@ -15,8 +14,8 @@
 		"build:server": "yarn workspace server build",
 		"build:client": "yarn workspace client build",
 		"lint": "run-p -l lint:client lint:server",
-		"lint:client": "tslint --project client/tsconfig.json",
-		"lint:server": "tslint --project server/tsconfig.json"
+		"lint:client": "tslint --project packages/client/tsconfig.json",
+		"lint:server": "tslint --project packages/server/tsconfig.json"
 	},
 	"repository": {
 		"type": "git",

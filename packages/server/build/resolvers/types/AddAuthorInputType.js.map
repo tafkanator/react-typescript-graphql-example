@@ -1,0 +1,1 @@
+{"version":3,"file":"AddAuthorInputType.js","sourceRoot":"","sources":["../../../src/resolvers/types/AddAuthorInputType.ts"],"names":[],"mappings":";;;;;;;;;AAAA,OAAO,EAAE,SAAS,EAAE,KAAK,EAAE,MAAM,cAAc,CAAC;AAIhD,IAAqB,kBAAkB,GAAvC;CAEC,CAAA;AADS;IAAR,KAAK,EAAE;;gDAAe;AADH,kBAAkB;IADtC,SAAS,CAAC,EAAE,WAAW,EAAE,iBAAiB,EAAE,CAAC;GACzB,kBAAkB,CAEtC;eAFoB,kBAAkB"}

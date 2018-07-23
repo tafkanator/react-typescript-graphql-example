@@ -1,5 +1,5 @@
 {
-	"extends": ["../tslint.json", "tslint-react"],
+	"extends": ["../../tslint.json", "tslint-react"],
 	"rules": {
 		"ordered-imports": false,
 		"jsx-boolean-value": false,
