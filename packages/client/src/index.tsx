@@ -7,7 +7,7 @@ import RootView from './views/RootView';
 import './index.css';
 
 // Pass your GraphQL endpoint to uri
-const client = new ApolloClient({ uri: `http://localhost:4000` });
+const client = new ApolloClient({ uri: `http://localhost:4000/graphql`, credentials: 'same-origin' });
 
 ReactDOM.render(
 	<ApolloProvider client={client}>

@@ -3,7 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"start": "parcel src/index.html"
+		"start": "parcel --port 3000 src/index.html"
 	},
 	"dependencies": {
 		"@types/react": "^16.4.6",
