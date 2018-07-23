@@ -1,8 +1,0 @@
-{
-	"extends": ["tslint-react", "tslint:recommended", "tslint-config-prettier"],
-	"defaultSeverity": "warning",
-	"rules": {
-		"ordered-imports": false,
-		"jsx-boolean-value": false
-	}
-}
