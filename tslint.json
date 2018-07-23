@@ -1,4 +1,7 @@
 {
 	"extends": ["tslint:recommended", "tslint-config-prettier"],
-	"defaultSeverity": "warning"
+	"defaultSeverity": "warning",
+	"rules": {
+		"ordered-imports": false
+	}
 }

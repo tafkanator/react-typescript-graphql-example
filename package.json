@@ -9,10 +9,10 @@
 	"scripts": {
 		"start": "run-p -l start:server start:client",
 		"start:server": "yarn workspace server start",
-		"start:client": "yarn workspace client-old start",
+		"start:client": "yarn workspace client start",
 		"build": "run-p build:client build:server",
 		"build:server": "yarn workspace server build",
-		"build:client": "yarn workspace client-old build",
+		"build:client": "yarn workspace client build",
 		"lint": "run-p -l lint:client lint:server",
 		"lint:client": "tslint --project packages/client/tsconfig.json",
 		"lint:server": "tslint --project packages/server/tsconfig.json"
